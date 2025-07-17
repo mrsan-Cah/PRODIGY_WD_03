@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="themeBtn">🌙</button>
+  </div>
+
+  <div class="container">
+    <h1>Tic-Tac-Toe</h1>
+
+    <div id="setup">
+      <input type="text" id="playerName" placeholder="Enter your name" />
+      <div class="choice">
+        <span>Choose:</span>
+        <button class="symbol" data-choice="X">X</button>
+        <button class="symbol" data-choice="O">O</button>
+      </div>
+    </div>
+
+    <div id="game" class="hidden">
+      <div class="info"><span id="playerLabel"></span> vs AI</div>
+      <div class="board" id="board"></div>
+      <canvas id="lineCanvas"></canvas>
+      <canvas id="particles"></canvas>
+      <div class="status" id="statusText"></div>
+      <button id="restartBtn">Restart Game</button>
+    </div>
+  </div>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+  <audio id="winSound" src="win.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

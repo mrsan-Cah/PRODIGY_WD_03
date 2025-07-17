@@ -1,0 +1,153 @@
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --primary: #00c6ff;
+  --cell-bg: #fff;
+  --btn-bg: #00c6ff;
+  --btn-text: #fff;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+  --primary: #ff6ec4;
+  --cell-bg: #1e1e1e;
+  --btn-bg: #ff6ec4;
+  --btn-text: #121212;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+}
+
+.choice {
+  margin-bottom: 1rem;
+}
+
+.symbol {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.info {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: var(--cell-bg);
+  color: var(--text);
+  font-size: 2.5rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.status {
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+button#restartBtn {
+  padding: 10px 20px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+#themeBtn {
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.hidden {
+  display: none;
+}
+
+canvas#lineCanvas,
+canvas#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px var(--primary); }
+  50% { box-shadow: 0 0 20px var(--primary); }
+  100% { box-shadow: 0 0 5px var(--primary); }
+}
+
+.winner {
+  background: var(--primary);
+  color: white;
+  animation: glow 1s ease-in-out infinite alternate;
+}
